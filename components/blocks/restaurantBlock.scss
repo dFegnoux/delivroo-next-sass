@@ -1,0 +1,36 @@
+@import "../../theme";
+
+.restaurantBlockWrapper {
+  background-color: white;
+  width: 100%;
+}
+
+.restaurantBlockContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin: auto;
+  width: 100%;
+  padding: 1rem;
+  max-width: $mainMaxWidth;
+
+  .texts {
+    padding: 1rem;
+  }
+
+  .newsPictureWrapper {
+    max-width: 33%;
+    border-radius: 9px;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.newsTitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

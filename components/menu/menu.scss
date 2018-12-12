@@ -1,0 +1,24 @@
+@import "../../theme";
+
+.menuLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuContentWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.roundedItem {
+  background-color: white;
+  border-radius: 9px;
+}
+
+.menusContainer {
+  padding: 1rem;
+}

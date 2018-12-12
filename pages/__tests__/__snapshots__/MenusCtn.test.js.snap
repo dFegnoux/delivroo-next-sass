@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenusCtn snapshots should render correctly 1`] = `
+<div
+  className="layoutPageContent layoutLimitedWidth"
+>
+  <div
+    className="css-ph4qhg"
+  >
+    <div
+      className="css-10zneet"
+    />
+    <div
+      className="css-18rqjra"
+    />
+    <div
+      className="css-vyfd34"
+    />
+    <div
+      className="css-3syn48"
+    />
+    <div
+      className="css-18rniua"
+    />
+    <div
+      className="css-ueou2"
+    />
+  </div>
+</div>
+`;
+
+exports[`MenusCtn snapshots should render correctly with a restaurant and menus 1`] = `
+Array [
+  <div
+    className="restaurantBlockWrapper centerContent"
+  >
+    <div
+      className="restaurantBlockContent resetTextAlign"
+    >
+      <div
+        className="texts"
+      >
+        <div
+          className="newsTitle"
+        >
+          Mocked restaurant
+        </div>
+        <div
+          className="newsDescription"
+        >
+          Mocked restaurant description
+        </div>
+      </div>
+      <div
+        className="newsPictureWrapper"
+      >
+        <img
+          alt="Mocked restaurant"
+          src="Mocked restaurant picture"
+        />
+      </div>
+    </div>
+  </div>,
+  <div
+    className="layoutPageContent layoutLimitedWidth"
+  >
+    <div
+      className="menuLayout"
+    >
+      <div
+        className="menuContentWrapper"
+      >
+        <div
+          className="menuCategory"
+        >
+          <div
+            className="title"
+          >
+            category1
+          </div>
+          <div
+            className="itemsList"
+          >
+            <div
+              className="menuCard"
+              onClick={[Function]}
+            >
+              <div
+                className="content roundedItem"
+              >
+                <div
+                  className="texts"
+                >
+                  <div
+                    className="cardTitle"
+                  />
+                  <div
+                    className="description"
+                  >
+                    
+                  </div>
+                  <div
+                    className="bottom"
+                  >
+                    <span
+                      className="price"
+                    >
+                       €
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="cartWrapper"
+      >
+        <div
+          className="cart roundedItem"
+        >
+          <a
+            className="btn"
+            disabled="disabled"
+            href="/cart/validation"
+            onClick={[Function]}
+          >
+            Valider mon panier
+          </a>
+          <div>
+            Votre panier est vide
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput snapshots should handle display of an error message 1`] = `
+<div
+  className="input col-mockdeClassName"
+>
+  <label>
+    mockedLabel
+  </label>
+  <input
+    name="mockedFieldName"
+    type="text"
+  />
+  <div
+    className="error"
+  >
+    error
+  </div>
+</div>
+`;
+
+exports[`TextInput snapshots should render correctly with default props 1`] = `
+<div
+  className="input col-mockdeClassName"
+>
+  <label>
+    mockedLabel
+  </label>
+  <input
+    name="mockedFieldName"
+    type="text"
+  />
+</div>
+`;

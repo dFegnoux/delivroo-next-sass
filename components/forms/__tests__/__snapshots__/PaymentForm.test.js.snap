@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentForm snapshots 1`] = `
+<form
+  className="paymentForm"
+  onSubmit={[Function]}
+>
+  <div
+    className="input col-6"
+  >
+    <label>
+      Etage et numéro d'appartement
+    </label>
+    <input
+      name="flat"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : Appartement n°15"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-6"
+  >
+    <label>
+      Digicode
+    </label>
+    <input
+      name="code"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : B123"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-12"
+  >
+    <label>
+      Adresse
+    </label>
+    <input
+      name="street_address"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : 100 Rue de Rivoli"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-6"
+  >
+    <label>
+      Code postal
+    </label>
+    <input
+      name="postcode"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : 75001"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-6"
+  >
+    <label>
+      Ville
+    </label>
+    <input
+      name="city"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : Paris"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-12"
+  >
+    <label>
+      Numéro de téléphone
+    </label>
+    <input
+      name="phone"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="+33 9 77 55 03 30"
+      type="text"
+    />
+  </div>
+  <div
+    className="input col-12"
+  >
+    <label>
+      Instructions pour votre livreur ?
+    </label>
+    <input
+      name="instructions"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="ex : C'est la porte noire près de l'animalerie. Merci d'appeler lorsque vous arrivez."
+      type="text"
+    />
+  </div>
+  <button
+    disabled={false}
+    type="submit"
+  >
+    Valider
+  </button>
+</form>
+`;

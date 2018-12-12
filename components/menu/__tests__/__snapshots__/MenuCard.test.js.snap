@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuCard snapshots should render correclty differents values of popular attribute 1`] = `
+<div
+  className="menuCard"
+  onClick={[Function]}
+>
+  <div
+    className="content roundedItem"
+  >
+    <div
+      className="texts"
+    >
+      <div
+        className="cardTitle"
+      >
+        mocked title
+      </div>
+      <div
+        className="description"
+      >
+        mocked description
+      </div>
+      <div
+        className="bottom"
+      >
+        <span
+          className="price"
+        >
+          mocked price
+           €
+        </span>
+      </div>
+    </div>
+    <div
+      className="pictureWrapper"
+    >
+      <img
+        alt="mocked title"
+        src="mocked picture"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuCard snapshots should render correclty differents values of popular attribute 2`] = `
+<div
+  className="menuCard"
+  onClick={[Function]}
+>
+  <div
+    className="content roundedItem"
+  >
+    <div
+      className="texts"
+    >
+      <div
+        className="cardTitle"
+      >
+        mocked title
+      </div>
+      <div
+        className="description"
+      >
+        mocked description
+      </div>
+      <div
+        className="bottom"
+      >
+        <span
+          className="price"
+        >
+          mocked price
+           €
+        </span>
+        <span
+          className="popular"
+        >
+          Populaire
+        </span>
+      </div>
+    </div>
+    <div
+      className="pictureWrapper"
+    >
+      <img
+        alt="mocked title"
+        src="mocked picture"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuCard snapshots should render correclty if item has picture or not 1`] = `
+<div
+  className="menuCard"
+  onClick={[Function]}
+>
+  <div
+    className="content roundedItem"
+  >
+    <div
+      className="texts"
+    >
+      <div
+        className="cardTitle"
+      >
+        mocked title
+      </div>
+      <div
+        className="description"
+      >
+        mocked description
+      </div>
+      <div
+        className="bottom"
+      >
+        <span
+          className="price"
+        >
+          mocked price
+           €
+        </span>
+        <span
+          className="popular"
+        >
+          Populaire
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuCard snapshots should render correclty if item has picture or not 2`] = `
+<div
+  className="menuCard"
+  onClick={[Function]}
+>
+  <div
+    className="content roundedItem"
+  >
+    <div
+      className="texts"
+    >
+      <div
+        className="cardTitle"
+      >
+        mocked title
+      </div>
+      <div
+        className="description"
+      >
+        mocked description
+      </div>
+      <div
+        className="bottom"
+      >
+        <span
+          className="price"
+        >
+          mocked price
+           €
+        </span>
+        <span
+          className="popular"
+        >
+          Populaire
+        </span>
+      </div>
+    </div>
+    <div
+      className="pictureWrapper"
+    >
+      <img
+        alt="mocked title"
+        src="mocked picture"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuCard snapshots should render correctly with default props 1`] = `
+<div
+  className="menuCard"
+  onClick={[Function]}
+>
+  <div
+    className="content roundedItem"
+  >
+    <div
+      className="texts"
+    >
+      <div
+        className="cardTitle"
+      >
+        mocked title
+      </div>
+      <div
+        className="description"
+      >
+        mocked description
+      </div>
+      <div
+        className="bottom"
+      >
+        <span
+          className="price"
+        >
+          mocked price
+           €
+        </span>
+        <span
+          className="popular"
+        >
+          Populaire
+        </span>
+      </div>
+    </div>
+    <div
+      className="pictureWrapper"
+    >
+      <img
+        alt="mocked title"
+        src="mocked picture"
+      />
+    </div>
+  </div>
+</div>
+`;

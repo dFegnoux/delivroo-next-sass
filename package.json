@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:snapshot:update": "jest --u",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.0",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "formik": "^1.4.0",
+    "next": "7.0.2",
+    "node-sass": "^4.7.2",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-spinners": "^0.4.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "babel-core": "^7.0.0-bridge",
+    "babel-jest": "^23.6.0",
+    "enzyme": "3.4.3",
+    "enzyme-adapter-react-16": "1.2.0",
+    "jest": "^23.6.0",
+    "jest-localstorage-mock": "^2.3.0",
+    "jest-mock-axios": "^2.1.11",
+    "react-addons-test-utils": "15.6.2",
+    "react-test-renderer": "16.4.2"
+  }
+}

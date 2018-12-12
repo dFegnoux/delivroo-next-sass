@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityModifiers snapshots should render correctly with default props 1`] = `
+<div
+  className="quantityModifier"
+>
+  <button
+    className="remove"
+    onClick={[Function]}
+  >
+    -
+  </button>
+  <span
+    className="quantity"
+  >
+    3
+  </span>
+  <button
+    className="add"
+    onClick={[Function]}
+  >
+    +
+  </button>
+</div>
+`;
+
+exports[`QuantityModifiers snapshots should render correctly with disabled buttons 1`] = `
+<div
+  className="quantityModifier"
+>
+  <span
+    className="quantity"
+  >
+    3
+  </span>
+</div>
+`;

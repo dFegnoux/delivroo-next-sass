@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When Cart is instanciate without UpdateCart function should render correctly 1`] = `
+<div
+  className="cartWrapper"
+>
+  <div
+    className="cart roundedItem"
+  >
+    <div>
+      Votre panier est vide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  className="cartWrapper"
+>
+  <div
+    className="cart roundedItem"
+  >
+    <a
+      className="btn"
+      disabled={null}
+      href="/cart/validation"
+      onClick={[Function]}
+    >
+      Valider mon panier
+    </a>
+    <ul>
+      <li>
+        <div
+          className="quantityModifier"
+        >
+          <button
+            className="remove"
+            onClick={[Function]}
+          >
+            -
+          </button>
+          <span
+            className="quantity"
+          >
+            1
+          </span>
+          <button
+            className="add"
+            onClick={[Function]}
+          >
+            +
+          </button>
+        </div>
+        <span
+          className="itemName"
+        />
+        <span
+          className="total"
+        >
+          15,00 €
+        </span>
+      </li>
+      <li>
+        <div
+          className="quantityModifier"
+        >
+          <button
+            className="remove"
+            onClick={[Function]}
+          >
+            -
+          </button>
+          <span
+            className="quantity"
+          >
+            3
+          </span>
+          <button
+            className="add"
+            onClick={[Function]}
+          >
+            +
+          </button>
+        </div>
+        <span
+          className="itemName"
+        />
+        <span
+          className="total"
+        >
+          15,00 €
+        </span>
+      </li>
+    </ul>
+    <div
+      className="mainTotal"
+    >
+      <span>
+        Total : 
+      </span>
+      <span>
+        30,00 €
+      </span>
+    </div>
+  </div>
+</div>
+`;
