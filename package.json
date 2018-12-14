@@ -18,7 +18,8 @@
     "react-dom": "16.6.3",
     "react-helmet": "^5.2.0",
     "react-spinners": "^0.4.7",
-    "why-did-you-update": "^1.0.6"
+    "why-did-you-update": "^1.0.6",
+    "yup": "^0.26.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import PaymentForm from "../components/forms/PaymentForm";
+import DeliveryForm from "../components/forms/DeliveryForm";
 import Cart from "../components/menu/Cart";
-import Helmet from "react-helmet";
 import PageHelmet from "../components/PageHelmet";
 
 class Menus extends Component {
   state = {
-    cart: {}
+    cart: {},
+    showCardForm: false
   };
 
   render() {
@@ -16,7 +16,7 @@ class Menus extends Component {
       <div className="menuLayout">
         <PageHelmet title="Validate your order" />
         <div className="menuContentWrapper">
-          <PaymentForm />
+          <DeliveryForm />
         </div>
         <Cart menus={cart} disableButtons />
       </div>

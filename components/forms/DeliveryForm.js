@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import { Formik, Field } from "formik";
-import paymentFormFields from "./paymentFormFields";
+import deliveryFormFields from "./paymentFormFields";
 import TextInput from "./TextInput";
-import "./paymentForm.scss";
+import "./deliveryForm.scss";
 import Button from "../UX/Button";
+import * as Yup from "yup";
+
+const SignupSchema = Yup.object().shape({
+  flat: Yup.string(),
+  code: Yup.string(),
+  street_address: Yup.string().required("Required"),
+  postcode: Yup.number()
+    .min("5 caractères minimum")
+    .required("Required"),
+  city: Yup.string().required("Required"),
+  phone: Yup.string().required("Required"),
+  instructions: Yup.string()
+});
 
 class PaymentForm extends Component {
   state = {
@@ -21,25 +34,12 @@ class PaymentForm extends Component {
     // });
 
     this.setState(() => ({
-      formFields: paymentFormFields.map(field => ({
+      formFields: deliveryFormFields.map(field => ({
         ...field,
         initialValue: ""
       }))
     }));
   }
-
-  validate = values => {
-    const required = ["street_address", "postcode", "city", "phone"];
-    let errors = {};
-
-    Object.keys(values).forEach(key => {
-      if (!values[key] && required.includes(key)) {
-        errors[key] = "Required";
-      }
-    });
-
-    return errors;
-  };
 
   submit = (values, { setSubmitting, isValid }) => {
     if (!isValid) {
@@ -61,13 +61,12 @@ class PaymentForm extends Component {
     return (
       <Formik
         initialValues={initialValues}
-        validate={this.validate}
+        validationSchema={SignupSchema}
         onSubmit={this.submit}
         validateOnChange
         isInitialValid={false}
       >
         {({ isSubmitting, handleSubmit, isValid }) => {
-          console.log(isSubmitting, !isValid, isSubmitting || !isValid);
           return (
             <form onSubmit={handleSubmit} className="paymentForm">
               {formFields.map(field => (
@@ -79,7 +78,6 @@ class PaymentForm extends Component {
                   className={field.col}
                   label={field.title}
                   component={TextInput}
-                  validateOnChange
                 />
               ))}
               <Button
