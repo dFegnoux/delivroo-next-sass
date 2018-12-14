@@ -11,6 +11,16 @@ const props = {
 };
 const container = shallow(<QuantityModifier {...props} />);
 
+describe("QuantityModifiers functions", () => {
+  it("should call updateCart function", () => {
+    container.instance().addItemToCart();
+    expect(props.updateCart).toHaveBeenCalledWith(props.item, "add");
+
+    container.instance().removeItemToCart();
+    expect(props.updateCart).toHaveBeenCalledWith(props.item, "remove");
+  });
+});
+
 describe("QuantityModifiers snapshots", () => {
   it("should render correctly with default props", () => {
     const tree = renderer.create(<QuantityModifier {...props} />).toJSON();
@@ -22,15 +32,5 @@ describe("QuantityModifiers snapshots", () => {
       .create(<QuantityModifier disabled {...props} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
-  });
-});
-
-describe("Modifiers actions", () => {
-  it("should correctly fired updateCart function", () => {
-    container.find(".remove").simulate("click");
-    expect(props.updateCart).toHaveBeenCalledWith(props.item, "remove");
-
-    container.find(".add").simulate("click");
-    expect(props.updateCart).toHaveBeenCalledWith(props.item, "add");
   });
 });

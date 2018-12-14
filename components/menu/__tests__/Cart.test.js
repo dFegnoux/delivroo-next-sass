@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 
-import Cart from "./Cart";
+import Cart from "../Cart";
 
 const mockedMenus = {
   menu1: {
@@ -49,14 +49,14 @@ describe("Validate button", () => {
   });
 
   it("should be displayed if props say so", () => {
-    expect(container.find(".btn").length).toBe(1);
+    expect(container.find("Button").length).toBe(1);
     container.setProps({ disableButtons: true });
-    expect(container.find(".btn").length).toBe(0);
+    expect(container.find("Button").length).toBe(0);
   });
 
-  it("should display as disabled with an empty cart", () => {
+  it("should be displayed as disabled with an empty cart", () => {
     container.setProps({ menus: {} });
-    expect(container.find(".btn").props().disabled).toBeTruthy();
+    expect(container.find("Button").props().disabled).toBeTruthy();
   });
 });
 

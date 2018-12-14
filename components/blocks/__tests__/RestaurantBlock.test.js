@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import RestaurantBlock from "./RestaurantBlock";
+import RestaurantBlock from "../RestaurantBlock";
 
 const props = {
   name: "My awesome restaurant",

@@ -120,14 +120,13 @@ Array [
         <div
           className="cart roundedItem"
         >
-          <a
-            className="btn"
-            disabled="disabled"
-            href="/cart/validation"
+          <button
+            className="btn [object Object] fullWidth"
+            disabled={true}
             onClick={[Function]}
           >
             Valider mon panier
-          </a>
+          </button>
           <div>
             Votre panier est vide
           </div>

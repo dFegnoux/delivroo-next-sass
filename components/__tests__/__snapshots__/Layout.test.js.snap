@@ -105,6 +105,25 @@ exports[`Layout snapshots should render correctly with default props 1`] = `
             />
           </svg>
         </a>
+        <select
+          onChange={[Function]}
+        >
+          <option
+            value="delivroo"
+          >
+            delivroo
+          </option>
+          <option
+            value="lbc"
+          >
+            leboncoin
+          </option>
+          <option
+            value="facebook"
+          >
+            facebook
+          </option>
+        </select>
       </div>
     </header>
     <div

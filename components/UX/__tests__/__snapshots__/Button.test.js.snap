@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buttons snapshots Should render a Link when href is setted 1`] = `
+<button
+  className="btn [object Object] "
+  onClick={[Function]}
+>
+  
+</button>
+`;
+
+exports[`Buttons snapshots Should render a Link when href is setted 2`] = `
+<button
+  className="btn [object Object] delivroo"
+  disabled={true}
+  onClick={[Function]}
+>
+  toto
+</button>
+`;
+
+exports[`Buttons snapshots Should render a buttn when handleclick is setted 1`] = `
+<button
+  className="btn [object Object] delivroo"
+  onClick={[MockFunction]}
+>
+  toto
+</button>
+`;
+
+exports[`Buttons snapshots Should render a buttn when handleclick is setted 2`] = `
+<button
+  className="btn [object Object] delivroo"
+  disabled={true}
+  onClick={[MockFunction]}
+>
+  toto
+</button>
+`;

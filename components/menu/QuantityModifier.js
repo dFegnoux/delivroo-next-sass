@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import Button from "../UX/Button";
 
 class QuantityModifier extends PureComponent {
   static propTypes = {
@@ -12,36 +13,38 @@ class QuantityModifier extends PureComponent {
     disabled: false
   };
 
+  addItemToCart = () => {
+    const { updateCart, item } = this.props;
+    updateCart(item, "add");
+  };
+
+  removeItemToCart = () => {
+    const { updateCart, item } = this.props;
+    updateCart(item, "remove");
+  };
+
   render() {
     const {
-      item,
       item: { quantity },
-      updateCart,
       disabled
     } = this.props;
 
     return (
       <div className="quantityModifier">
         {!disabled && (
-          <button
-            className="remove"
-            onClick={() => {
-              updateCart(item, "remove");
-            }}
-          >
-            -
-          </button>
+          <Button
+            className="remove small"
+            label="-"
+            handleClick={this.removeItemToCart}
+          />
         )}
         <span className="quantity">{quantity}</span>
         {!disabled && (
-          <button
-            className="add"
-            onClick={() => {
-              updateCart(item, "add");
-            }}
-          >
-            +
-          </button>
+          <Button
+            className="add small"
+            label="+"
+            handleClick={this.addItemToCart}
+          />
         )}
       </div>
     );

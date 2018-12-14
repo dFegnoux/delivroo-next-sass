@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import Link from "next/link";
 import QuantityModifier from "./QuantityModifier";
 import {
   calculateCartTotalPrice,
   formatToPriceString
 } from "../../helpers/cartHelpers";
 import "./cart.scss";
+import Button from "../UX/Button";
 
 class Cart extends Component {
   static propTypes = {
@@ -27,17 +27,18 @@ class Cart extends Component {
   render() {
     const { menus, updateCart, disableButtons } = this.props;
     const selectedMenus = Object.entries(menus);
-    const isBtnDisabled = !selectedMenus.length ? "disabled" : null;
+    const isBtnDisabled = !selectedMenus.length;
 
     return (
       <div className="cartWrapper">
         <div className="cart roundedItem">
           {!disableButtons && (
-            <Link href="/cart/validation">
-              <a className="btn" disabled={isBtnDisabled}>
-                Valider mon panier
-              </a>
-            </Link>
+            <Button
+              href="/cart/validation"
+              className="fullWidth"
+              disabled={isBtnDisabled}
+              label="Valider mon panier"
+            />
           )}
           {selectedMenus.length ? (
             <Fragment>
