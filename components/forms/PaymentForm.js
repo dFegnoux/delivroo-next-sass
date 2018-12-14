@@ -3,6 +3,7 @@ import { Formik, Field } from "formik";
 import paymentFormFields from "./paymentFormFields";
 import TextInput from "./TextInput";
 import "./paymentForm.scss";
+import Button from "../UX/Button";
 
 class PaymentForm extends Component {
   state = {
@@ -40,7 +41,12 @@ class PaymentForm extends Component {
     return errors;
   };
 
-  submit = (values, { setSubmitting }) => {
+  submit = (values, { setSubmitting, isValid }) => {
+    if (!isValid) {
+      alert("Why did you try to do that ?!");
+      return;
+    }
+
     console.log(JSON.stringify(values, null, 2));
     setSubmitting(false);
   };
@@ -57,25 +63,33 @@ class PaymentForm extends Component {
         initialValues={initialValues}
         validate={this.validate}
         onSubmit={this.submit}
+        validateOnChange
+        isInitialValid={false}
       >
-        {({ isSubmitting, handleSubmit }) => (
-          <form onSubmit={handleSubmit} className="paymentForm">
-            {formFields.map(field => (
-              <Field
-                key={field.name}
-                type="text"
-                name={field.name}
-                placeholder={field.placeholder}
-                className={field.col}
-                label={field.title}
-                component={TextInput}
+        {({ isSubmitting, handleSubmit, isValid }) => {
+          console.log(isSubmitting, !isValid, isSubmitting || !isValid);
+          return (
+            <form onSubmit={handleSubmit} className="paymentForm">
+              {formFields.map(field => (
+                <Field
+                  key={field.name}
+                  type="text"
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  className={field.col}
+                  label={field.title}
+                  component={TextInput}
+                  validateOnChange
+                />
+              ))}
+              <Button
+                type="submit"
+                label="Valider"
+                disabled={isSubmitting || !isValid}
               />
-            ))}
-            <button type="submit" disabled={isSubmitting}>
-              Valider
-            </button>
-          </form>
-        )}
+            </form>
+          );
+        }}
       </Formik>
     );
   }

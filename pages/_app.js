@@ -4,6 +4,13 @@ import App, { Container } from "next/app";
 import Layout from "../components/Layout";
 import "../styles/index.scss";
 
+import whyDidYouUpdate from "why-did-you-update";
+
+if (process.env.NODE_ENV !== "production") {
+  const { whyDidYouUpdate } = require("why-did-you-update");
+  whyDidYouUpdate(React);
+}
+
 export default class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};

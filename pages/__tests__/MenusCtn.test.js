@@ -29,7 +29,7 @@ describe("MenusCtn snapshots", () => {
   });
 });
 
-describe("MenusCtn lifecylce", () => {
+describe("MenusCtn lifecycle", () => {
   afterEach(() => {
     localStorage.removeItem("cart");
   });

@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
+import Helmet from "react-helmet";
 import RestaurantBlock from "../components/blocks/RestaurantBlock";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import Menu from "../components/menu/Menu";
 import { formatMenus } from "../helpers/menuHelpers";
 import "../components/menu/menu.scss";
+import PageHelmet from "../components/PageHelmet";
 
 class CartValidationCtn extends Component {
   state = {
@@ -94,11 +96,19 @@ class CartValidationCtn extends Component {
     return (
       <Fragment>
         {Object.keys(restaurant).length > 0 && (
-          <RestaurantBlock
-            name={restaurant.name}
-            description={restaurant.description}
-            picture={restaurant.picture}
-          />
+          <Fragment>
+            <PageHelmet
+              title={`${restaurant.name} menu`}
+              description={`Order some magnificient food from ${
+                restaurant.name
+              } restaurant now!`}
+            />
+            <RestaurantBlock
+              name={restaurant.name}
+              description={restaurant.description}
+              picture={restaurant.picture}
+            />
+          </Fragment>
         )}
         <div className="layoutPageContent layoutLimitedWidth">
           {!menu.length ? (

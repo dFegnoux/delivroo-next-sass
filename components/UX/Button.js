@@ -10,33 +10,44 @@ class Button extends PureComponent {
     href: PropTypes.string,
     label: PropTypes.string,
     disabled: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    type: PropTypes.string
   };
 
   static defaultProps = {
     label: "",
     fullWidth: false,
-    className: ""
+    className: "",
+    disabled: false,
+    handleClick: null,
+    type: null
   };
 
   render() {
-    const { handleClick, href, label, disabled, className } = this.props;
+    const { handleClick, href, label, disabled, className, type } = this.props;
     const theme = this.context;
     const btnClass = `btn ${theme} ${className}`;
-    if (typeof handleClick === "function") {
+
+    if (href) {
       return (
-        <button className={btnClass} onClick={handleClick} disabled={disabled}>
+        <Link href={href}>
+          <button className={btnClass} disabled={disabled}>
+            {label}
+          </button>
+        </Link>
+      );
+    } else {
+      return (
+        <button
+          type={type}
+          className={btnClass}
+          onClick={handleClick}
+          disabled={disabled}
+        >
           {label}
         </button>
       );
     }
-    return (
-      <Link href={href}>
-        <button className={btnClass} disabled={disabled}>
-          {label}
-        </button>
-      </Link>
-    );
   }
 }
 

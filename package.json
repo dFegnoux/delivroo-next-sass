@@ -16,7 +16,9 @@
     "node-sass": "^4.7.2",
     "react": "16.6.3",
     "react-dom": "16.6.3",
-    "react-spinners": "^0.4.7"
+    "react-helmet": "^5.2.0",
+    "react-spinners": "^0.4.7",
+    "why-did-you-update": "^1.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
