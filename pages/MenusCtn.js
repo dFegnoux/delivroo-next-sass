@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 import axios from "axios";
-import Helmet from "react-helmet";
+import { getCart } from "../selectors/cartSelectors";
+import { initCart, updateCart } from "../actions/cartActions";
 import RestaurantBlock from "../components/blocks/RestaurantBlock";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import Menu from "../components/menu/Menu";
@@ -8,7 +10,7 @@ import { formatMenus } from "../helpers/menuHelpers";
 import "../components/menu/menu.scss";
 import PageHelmet from "../components/PageHelmet";
 
-class CartValidationCtn extends Component {
+export class MenusCtn extends Component {
   state = {
     cart: {},
     showPayment: false
@@ -31,67 +33,15 @@ class CartValidationCtn extends Component {
     };
   }
 
-  /**
-   * Save the cart to local storage,
-   * cart item is provided by the component's state
-   */
-  saveCartToStorage = () => {
-    localStorage.setItem("cart", JSON.stringify(this.state.cart));
-  };
-
-  /**
-   * Add, remove menus from cart
-   * @param {Object} menu : A menu object from delivroo API
-   * @param {String} action : 'add' or 'remove'
-   */
-  updateCart = (menu, action) => {
-    // Get previous item if it already exists
-    const previousItem = this.state.cart.hasOwnProperty(menu.id)
-      ? this.state.cart[menu.id]
-      : null;
-
-    let newQuantity = previousItem ? previousItem.quantity : 0;
-    if (action === "remove") {
-      newQuantity--;
-    } else {
-      newQuantity++;
-    }
-
-    if (newQuantity) {
-      this.setState(
-        () => ({
-          cart: {
-            ...this.state.cart,
-            [menu.id]: {
-              ...menu,
-              name: menu.title,
-              quantity: newQuantity
-            }
-          }
-        }),
-        this.saveCartToStorage
-      );
-    } else {
-      const newCart = {
-        ...this.state.cart
-      };
-
-      delete newCart[menu.id];
-
-      this.setState(() => ({ cart: newCart }), this.saveCartToStorage);
-    }
-  };
-
   componentDidMount() {
-    const savedCart = localStorage.getItem("cart");
-    if (savedCart) {
-      this.setState(() => ({ cart: JSON.parse(savedCart) }));
-    }
+    this.props.initCart();
   }
 
   render() {
-    const { cart, showPayment } = this.state;
-    const { menu, restaurant } = this.props;
+    const { showPayment } = this.state;
+    const { menu, restaurant, updateCart, cart } = this.props;
+
+    // console.log("PROOOPS", this.props);
 
     return (
       <Fragment>
@@ -116,7 +66,7 @@ class CartValidationCtn extends Component {
           ) : (
             <Menu
               categories={menu}
-              updateCart={this.updateCart}
+              updateCart={updateCart}
               cart={cart}
               showPayment={showPayment}
             />
@@ -127,4 +77,9 @@ class CartValidationCtn extends Component {
   }
 }
 
-export default CartValidationCtn;
+export default connect(
+  state => ({
+    cart: getCart(state)
+  }),
+  { updateCart: updateCart, initCart: initCart }
+)(MenusCtn);

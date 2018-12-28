@@ -6,7 +6,9 @@ exports[`QuantityModifiers snapshots should render correctly with default props 
 >
   <button
     className="btn [object Object] remove small"
+    disabled={false}
     onClick={[Function]}
+    type={null}
   >
     -
   </button>
@@ -17,7 +19,9 @@ exports[`QuantityModifiers snapshots should render correctly with default props 
   </span>
   <button
     className="btn [object Object] add small"
+    disabled={false}
     onClick={[Function]}
+    type={null}
   >
     +
   </button>

@@ -110,7 +110,9 @@ exports[`CartValidationCtn snapshots should render correctly 1`] = `
         />
       </div>
       <button
-        disabled={false}
+        className="btn [object Object] "
+        disabled={true}
+        onClick={null}
         type="submit"
       >
         Valider

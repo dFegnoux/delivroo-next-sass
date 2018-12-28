@@ -24,7 +24,7 @@ class Menus extends Component {
   }
 
   componentDidMount() {
-    const retrievedCart = window.localStorage.getItem("cart");
+    const retrievedCart = localStorage.getItem("cart");
     if (retrievedCart) {
       this.setState(() => ({
         cart: JSON.parse(retrievedCart)

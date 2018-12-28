@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import MenuCategory from "./MenuCategory";
-import PaymentForm from "../forms/PaymentForm";
+//import PaymentForm from "../forms/PaymentForm";
 import Cart from "./Cart";
 import "./menu.scss";
 

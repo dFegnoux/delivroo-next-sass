@@ -3,6 +3,7 @@
 exports[`Buttons snapshots Should render a Link when href is setted 1`] = `
 <button
   className="btn [object Object] "
+  disabled={false}
   onClick={[Function]}
 >
   
@@ -22,7 +23,9 @@ exports[`Buttons snapshots Should render a Link when href is setted 2`] = `
 exports[`Buttons snapshots Should render a buttn when handleclick is setted 1`] = `
 <button
   className="btn [object Object] delivroo"
+  disabled={false}
   onClick={[MockFunction]}
+  type={null}
 >
   toto
 </button>
@@ -33,6 +36,7 @@ exports[`Buttons snapshots Should render a buttn when handleclick is setted 2`] 
   className="btn [object Object] delivroo"
   disabled={true}
   onClick={[MockFunction]}
+  type={null}
 >
   toto
 </button>

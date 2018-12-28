@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaymentForm snapshots 1`] = `
+exports[`DeliveryForm snapshots 1`] = `
 <form
   className="paymentForm"
   onSubmit={[Function]}
@@ -104,7 +104,9 @@ exports[`PaymentForm snapshots 1`] = `
     />
   </div>
   <button
-    disabled={false}
+    className="btn [object Object] "
+    disabled={true}
+    onClick={null}
     type="submit"
   >
     Valider

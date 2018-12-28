@@ -3,6 +3,8 @@ import { ThemeContext, themes } from "../contexts/theme-context";
 import App, { Container } from "next/app";
 import Layout from "../components/Layout";
 import "../styles/index.scss";
+import { store } from "../store";
+import { Provider } from "react-redux";
 
 import whyDidYouUpdate from "why-did-you-update";
 
@@ -40,13 +42,15 @@ export default class MyApp extends App {
     const { theme } = this.state;
 
     return (
-      <Container>
-        <ThemeContext.Provider value={this.state.theme}>
-          <Layout changeTheme={this.changeTheme}>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeContext.Provider>
-      </Container>
+      <Provider store={store}>
+        <Container>
+          <ThemeContext.Provider value={theme}>
+            <Layout changeTheme={this.changeTheme}>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeContext.Provider>
+        </Container>
+      </Provider>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Formik, Field } from "formik";
-import deliveryFormFields from "./paymentFormFields";
+import deliveryFormFields from "./deliveryFormFields";
 import TextInput from "./TextInput";
 import "./deliveryForm.scss";
 import Button from "../UX/Button";
