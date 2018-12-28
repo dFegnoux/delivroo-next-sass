@@ -18,7 +18,7 @@ class Menus extends Component {
         <div className="menuContentWrapper">
           <DeliveryForm />
         </div>
-        <Cart menus={cart} disableButtons />
+        <Cart disableButtons />
       </div>
     );
   }

@@ -8,22 +8,6 @@ export function formatToPriceString(number) {
 }
 
 /**
- * Get a simple addition of every elements of cart to get the totalRaw
- * @param {Object} objCartMenus : The cart menus object
- * @returns {Number}
- */
-export function calculateCartTotalPrice(objCartMenus) {
-  const cartMenus = Object.entries(objCartMenus);
-  let totalRaw = 0;
-
-  cartMenus.forEach(menu => {
-    totalRaw += menu[1].price * menu[1].quantity;
-  });
-
-  return formatToPriceString(totalRaw);
-}
-
-/**
  * Save the cart to local storage,
  * cart item is provided by the component's state
  */

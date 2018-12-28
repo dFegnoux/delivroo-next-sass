@@ -3,13 +3,6 @@ import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import CartValidationCtn from "../CartValidationCtn";
 
-describe("CartValidationCtn snapshots", () => {
-  it("should render correctly", () => {
-    const tree = renderer.create(<CartValidationCtn />);
-    expect(tree.toJSON()).toMatchSnapshot();
-  });
-});
-
 describe("CartValidationCtn lifecylce", () => {
   afterEach(() => {
     localStorage.removeItem("cart");

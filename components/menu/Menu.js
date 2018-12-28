@@ -1,15 +1,13 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import MenuCategory from "./MenuCategory";
-//import PaymentForm from "../forms/PaymentForm";
 import Cart from "./Cart";
 import "./menu.scss";
 
 class MenuCategories extends PureComponent {
   static propTypes = {
     categories: PropTypes.array,
-    updateCart: PropTypes.func.isRequired,
-    cart: PropTypes.object.isRequired
+    updateCart: PropTypes.func.isRequired
   };
 
   static defaultProps = {
@@ -17,7 +15,7 @@ class MenuCategories extends PureComponent {
   };
 
   render() {
-    const { categories, updateCart, cart, showPayment } = this.props;
+    const { categories, updateCart, showPayment } = this.props;
 
     return (
       <div className="menuLayout">
@@ -31,11 +29,7 @@ class MenuCategories extends PureComponent {
             />
           ))}
         </div>
-        <Cart
-          menus={cart}
-          updateCart={updateCart}
-          disableButtons={showPayment}
-        />
+        <Cart disableButtons={showPayment} />
       </div>
     );
   }

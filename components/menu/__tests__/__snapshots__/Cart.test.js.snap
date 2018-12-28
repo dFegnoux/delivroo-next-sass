@@ -106,9 +106,7 @@ exports[`renders correctly 1`] = `
       <span>
         Total : 
       </span>
-      <span>
-        30,00 €
-      </span>
+      <span />
     </div>
   </div>
 </div>

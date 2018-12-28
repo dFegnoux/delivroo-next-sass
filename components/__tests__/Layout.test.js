@@ -3,10 +3,24 @@ import renderer from "react-test-renderer";
 import { shallow } from "enzyme";
 import Layout from "../Layout";
 
-describe("Layout snapshots", () => {
+import { Link } from "next";
+import DelivrooLogo from "../images/DelivrooLogo";
+
+describe("Layout dom", () => {
+  // Given
   it("should render correctly with default props", () => {
-    const tree = renderer.create(<Layout />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const children = "Toto";
+    const container = shallow(<Layout>{children}</Layout>);
+
+    // Then
+    expect(container.find(".layout").length).toBe(1);
+    expect(container.find(".header").length).toBe(1);
+    expect(container.find("Link").length).toBe(1);
+    expect(container.find(DelivrooLogo).length).toBe(1);
+    expect(container.find("select").length).toBe(1);
+
+    expect(container.find(".layoutContent").length).toBe(1);
+    expect(container.find(".layoutContent").text()).toBe(children);
   });
 });
 

@@ -1,4 +1,4 @@
-import { formatMenus } from "./menuHelpers";
+import { formatMenus } from "../menuHelpers";
 
 describe("Format menu data", () => {
   it("Should filter empty menu categories", () => {

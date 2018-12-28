@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 
-import Cart from "../Cart";
+import { Cart } from "../Cart";
 
 const mockedMenus = {
   menu1: {
@@ -39,10 +39,6 @@ it("should have as many list item as menus", () => {
   expect(container.find("li").length).toBe(2);
 });
 
-it("should have an updateCart default function", () => {
-  expect(Cart.defaultProps.updateCart).toBeDefined();
-});
-
 describe("Validate button", () => {
   afterEach(() => {
     container.setProps(props);
@@ -61,7 +57,8 @@ describe("Validate button", () => {
 });
 
 describe("When Cart is instanciate without UpdateCart function", () => {
-  const noFnContainer = shallow(<Cart menus={{}} />);
+  const updateCart = jest.fn();
+  const container = shallow(<Cart menus={{}} updateCart={updateCart} />);
 
   it("should render correctly", () => {
     const snapshot = renderer.create(<Cart menus={{}} />).toJSON();
@@ -69,7 +66,7 @@ describe("When Cart is instanciate without UpdateCart function", () => {
   });
 
   it("should warn user when trying to use default update function", () => {
-    noFnContainer.instance().props.updateCart();
-    expect(console.warning).toHaveBeenCalled();
+    container.instance().props.updateCart();
+    expect(updateCart).toHaveBeenCalled();
   });
 });

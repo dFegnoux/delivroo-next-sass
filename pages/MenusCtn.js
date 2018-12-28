@@ -39,9 +39,7 @@ export class MenusCtn extends Component {
 
   render() {
     const { showPayment } = this.state;
-    const { menu, restaurant, updateCart, cart } = this.props;
-
-    // console.log("PROOOPS", this.props);
+    const { menu, restaurant, updateCart } = this.props;
 
     return (
       <Fragment>
@@ -67,7 +65,6 @@ export class MenusCtn extends Component {
             <Menu
               categories={menu}
               updateCart={updateCart}
-              cart={cart}
               showPayment={showPayment}
             />
           )}
@@ -78,8 +75,6 @@ export class MenusCtn extends Component {
 }
 
 export default connect(
-  state => ({
-    cart: getCart(state)
-  }),
+  undefined,
   { updateCart: updateCart, initCart: initCart }
 )(MenusCtn);

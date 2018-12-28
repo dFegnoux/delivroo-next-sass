@@ -1,31 +1,24 @@
 import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import QuantityModifier from "./QuantityModifier";
-import {
-  calculateCartTotalPrice,
-  formatToPriceString
-} from "../../helpers/cartHelpers";
+import { formatToPriceString } from "../../helpers/cartHelpers";
+import { updateCart } from "../../actions/cartActions";
+import { getCart, getCartTotalPrice } from "../../selectors/cartSelectors";
 import "./cart.scss";
 import Button from "../UX/Button";
 
-class Cart extends Component {
+export class Cart extends Component {
   static propTypes = {
-    menus: PropTypes.object.isRequired,
-    updateCart: PropTypes.func,
     disableButtons: PropTypes.bool
   };
 
   static defaultProps = {
-    disableButtons: true,
-    updateCart: () => {
-      console.warning(
-        "Trying to update with the default updateCart function, you may want to use a real function ;)"
-      );
-    }
+    disableButtons: true
   };
 
   render() {
-    const { menus, updateCart, disableButtons } = this.props;
+    const { menus, updateCart, disableButtons, totalCartPrice } = this.props;
     const selectedMenus = Object.entries(menus);
     const isBtnDisabled = !selectedMenus.length;
 
@@ -59,7 +52,7 @@ class Cart extends Component {
               </ul>
               <div className="mainTotal">
                 <span>Total : </span>
-                <span>{calculateCartTotalPrice(menus)}</span>
+                <span>{totalCartPrice}</span>
               </div>
             </Fragment>
           ) : (
@@ -71,4 +64,12 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+const mapStateToProps = state => ({
+  menus: getCart(state),
+  totalCartPrice: getCartTotalPrice(state)
+});
+
+export default connect(
+  mapStateToProps,
+  { updateCart: updateCart }
+)(Cart);
