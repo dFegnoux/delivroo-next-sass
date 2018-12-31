@@ -12,6 +12,7 @@ const mockStore = configureStore(middlewares);
 
 describe("Cart initialization action", () => {
   beforeEach(() => {
+    console.log("had to remove item cart from localstorage");
     localStorage.removeItem("cart");
   });
 
